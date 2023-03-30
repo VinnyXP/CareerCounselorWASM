@@ -1,14 +1,14 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include "HashTable.h"
-#include "LinkedList.h"
-#include "Efunctions.h"
-#include "Bfunctions.h"
-#include "Rfunctions.h"
-#include "Vfunctions.h"
-#include "BinaryTree.h"
 #include <unordered_map>
+#include "header-files/HashTable.h"
+#include "header-files/LinkedList.h"
+#include "header-files/Efunctions.h"
+#include "header-files/Bfunctions.h"
+#include "header-files/Rfunctions.h"
+#include "header-files/Vfunctions.h"
+#include "header-files/BinaryTree.h"
 
 int main()
 {

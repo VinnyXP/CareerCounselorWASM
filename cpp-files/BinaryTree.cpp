@@ -1,6 +1,6 @@
 #include <algorithm>
 #include <iostream>
-#include "BinaryTree.h"
+#include "../header-files/BinaryTree.h"
 #include <fstream>
 
 /**

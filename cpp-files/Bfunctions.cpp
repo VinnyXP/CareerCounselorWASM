@@ -9,16 +9,16 @@
 #include <unordered_map>
 #include <limits>
 #include <fstream>
-#include "Bfunctions.h"
-#include "Efunctions.h"
-#include "LinkedList.h"
-#include "HashTable.h"
-#include "Rfunctions.h"
-#include "QueueLL.h"
+#include "../header-files/Bfunctions.h"
+#include "../header-files/Efunctions.h"
+#include "../header-files/LinkedList.h"
+#include "../header-files/HashTable.h"
+#include "../header-files/Rfunctions.h"
+#include "../header-files/QueueLL.h"
 
 void output_name (std::string name)
 {
-    std::ofstream out("userdata.csv", std::ios::app);
+    std::ofstream out("assets/userdata.csv", std::ios::app);
     out << name << ",";
     out.close();
 }
@@ -115,7 +115,7 @@ void questionnaire (List& mylist, HashTable jobTable, std::unordered_map<std::st
         if(scale > 0 && scale < 6) //If user answers yes to the question
         {
             //Increment counters of group of jobs associated with question
-            for(int i = 0; i < mylist.traverse->JobGroups.size(); i++)
+            for(int i = 0; i < static_cast<int>(mylist.traverse->JobGroups.size()); i++)
             {
                 //Go the job category
                 std::string category = mylist.traverse->JobGroups[i];
@@ -129,7 +129,7 @@ void questionnaire (List& mylist, HashTable jobTable, std::unordered_map<std::st
                 // }
 
                 //Loops through the vector holding the jobs within the category
-                for(int j = 0; j < innerVec.size(); j++)
+                for(int j = 0; j < static_cast<int>(innerVec.size()); j++)
                 {
                     jobTable.incrementCounter(innerVec[j], scale);
                 } //end of for

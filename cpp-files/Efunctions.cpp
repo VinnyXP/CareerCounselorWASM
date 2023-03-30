@@ -3,7 +3,7 @@
  * Programmer: Eric Clark
 */ 
 
-#include "Efunctions.h"
+#include "../header-files/Efunctions.h"
 
 /*
 std::unordered_map<std::string, std::vector<std::string> > jobMap(std::string filename)
@@ -58,7 +58,7 @@ std::unordered_map<std::string, std::vector<std::string> > jobMap(std::string fi
     {
         if (line[0] == '@')
         {
-            for(int i = 1; i < line.length() - 1; i++)
+            for(int i = 1; i < static_cast<int>(line.length()) - 1; i++)
             {
                 jobGroup += line[i];
             }

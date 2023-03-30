@@ -7,9 +7,9 @@
 #include <string>
 #include <sstream>
 #include <unordered_map>
-#include "HashTable.h"
-#include "Vfunctions.h"
-#include "Rfunctions.h"
+#include "../header-files/HashTable.h"
+#include "../header-files/Vfunctions.h"
+#include "../header-files/Rfunctions.h"
 
 //___________________________________________Zip Code Map_____________________________________________//
 
@@ -83,7 +83,7 @@ bool zipChecker(std::string zipcode, std::unordered_map<int, std::string> zipMap
     }
 
     //Loops through the zipcode string
-    for (int i=0; i<=zipcode.length()-1; i++)
+    for (int i = 0; i<= static_cast<int>(zipcode.length()) - 1; i++)
     {
         char zipChar = zipcode[i]; //Store character in zipcode string at index i
 
@@ -217,7 +217,7 @@ void topTen(HashNode** jobArr, int size)
         std::cout << "Income: " << jobArr[i]->getHashNodeJobWage() << std::endl;
         counter++;
 
-        for (int j = 0; j < jobArr[i]->getHashNodeJobTitle().size() - 1; j++)
+        for (int j = 0; j < static_cast<int>(jobArr[i]->getHashNodeJobTitle().size()) - 1; j++)
         {
             out_file << jobArr[i]->getHashNodeJobTitle()[j];
         }

@@ -2,7 +2,7 @@
 #include <unordered_map>
 #include <string>
 #include <fstream>
-#include "LinkedList.h"
+#include "../header-files/LinkedList.h"
 
 void build_list(List& mylist, std::string filename)
 {
@@ -21,7 +21,7 @@ void build_list(List& mylist, std::string filename)
             newListNode->question = fileLine;
             
             getline(in_file, fileLine);
-            for(int i = 0; i < fileLine.length() - 1; i++)
+            for(int i = 0; i < static_cast<int>(fileLine.length()) - 1; i++)
             {
                 char ch = fileLine[i];
                 if(ch == '|')

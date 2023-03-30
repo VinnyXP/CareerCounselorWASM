@@ -6,7 +6,7 @@
 #include <string> 
 #include <fstream>
 #include <queue>
-#include "HashTable.h"
+#include "../header-files/HashTable.h"
 
 //A function to make a hash table
 HashTable import_hash(std::string file)
@@ -23,7 +23,7 @@ HashTable import_hash(std::string file)
         //loop to get the string before the "|" into job wage
         //loop to get the string after the "|" into job title
         int counter = 0;
-        for (int i = 0; i < line.length(); i++)
+        for (int i = 0; i < static_cast<int>(line.length()); i++)
         {
             char ch = line[i]; //Get the morse code in the line
             if (ch == '|')
@@ -36,7 +36,7 @@ HashTable import_hash(std::string file)
                 counter++;
             }
         }
-        for (int i = counter + 1; i < line.length(); i++)
+        for (int i = counter + 1; i < static_cast<int>(line.length()); i++)
         {
             char ch = line[i]; //Get the morse code in the line
             title += ch;

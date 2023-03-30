@@ -4,7 +4,7 @@
 */
 
 #include <iostream>
-#include "HashTable.h"
+#include "../header-files/HashTable.h"
 
 //Hash code to be tested on 
 int hash_code(const std::string& jobName)
@@ -181,7 +181,6 @@ void HashTable::deallocateHashTable(HashTable& myTable)
 {
    Iterator iter = myTable.begin(); //set the iterator at the beginning of the hash table to start iterating
    
-   int i = 0;
    while(iter.current != nullptr)
    {
       HashNode* temp = iter.current; //set the pointer of a HashNode to where the iterator is currently pointing in the hash table
@@ -269,8 +268,8 @@ void Iterator::next()
       {
          bucket_index++;
       }
-      while (bucket_index < container->buckets.size() && container->buckets[bucket_index] == nullptr);
-      if (bucket_index < container->buckets.size())
+      while (bucket_index < static_cast<int>(container->buckets.size()) && container->buckets[bucket_index] == nullptr);
+      if (bucket_index < static_cast<int>(container->buckets.size()))
       {
          // Start of next bucket
          current = container->buckets[bucket_index];         

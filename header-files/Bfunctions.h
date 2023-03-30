@@ -8,8 +8,8 @@
 
 #include <unordered_map>
 #include <string>
-#include "LinkedList.h"
-#include "HashTable.h"
+#include "../header-files/LinkedList.h"
+#include "../header-files/HashTable.h"
 
 void output_name(std::string name);
 
